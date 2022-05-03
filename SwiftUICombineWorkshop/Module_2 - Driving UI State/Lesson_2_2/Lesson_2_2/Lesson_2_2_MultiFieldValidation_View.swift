@@ -29,6 +29,9 @@ private class SignupViewModel: ObservableObject {
     @Published var confirmPassword  = ""
     
     // MARK: - Output
+    @Published var isUsernameValid = false
+    @Published var isPasswordEmpty = true
+    @Published var isPasswordMatched = false
     @Published var isValid  = false
     @Published var errorMessage  = ""
     @Published var authenticationState = AuthenticationState.unauthenticated
@@ -37,6 +40,23 @@ private class SignupViewModel: ObservableObject {
         $username
             .map { value in
                 value.count >= 3
+            }
+            .assign(to: &$isUsernameValid)
+        
+        $password
+            .map { $0.isEmpty }
+            .assign(to: &$isPasswordEmpty)
+        
+        $password
+            .combineLatest($confirmPassword)
+            .map { (password, confirmPassword) in
+                password == confirmPassword
+            }
+            .assign(to: &$isPasswordMatched)
+        
+        Publishers.CombineLatest3($isUsernameValid, $isPasswordEmpty, $isPasswordMatched)
+            .map { (isUsernameValid, isPasswordEmpty, isPasswordMatched) in
+                isUsernameValid && !isPasswordEmpty && isPasswordMatched
             }
             .assign(to: &$isValid)
     }

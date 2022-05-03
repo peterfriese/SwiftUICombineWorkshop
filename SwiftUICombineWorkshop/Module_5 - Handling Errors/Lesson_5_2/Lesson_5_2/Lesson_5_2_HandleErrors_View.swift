@@ -1,13 +1,10 @@
-/// Lesson 5.2: Handling errors received from the server
+/// Lesson 5.1: Throwing and catching errors
 ///
-/// Walkthrough:
-/// 1. `checkUserNameAvailable` now uses `mapError` to map errors received from `dataTaskPublisher`
-/// 2. But for some errors, we will received a valid HTTP response. This is why we will now inspect the
-///    response in more detail and decode any error messages that the server might have sent as a JSON object.
-/// 3. These errors will bubble up to `isUsernameAvailablePublisher` where we will convert them into a `Result`
-///    type, so we can handle them more easily
-/// 4. In `isFormValidPublisher` and `errorMessagePublisher`, we map the `Result` we received from
-///    `isUsernameAvailablePublisher` to a value that can then be further processed by the pipeline
+/// Steps:
+/// 1. Replace `Just(false)` call in `checkUserNameAvailable` with call to
+///    `Fail(errror: NetworkError.invalidRequestError(...)`
+/// 2. Update return type of `checkUserNameAvailable` to `AnyPublisher<Bool, Error>`
+/// 3. Update pipeline in `isUsernameAvailablePublisher` to catch the error and return `Just(false)`
 
 import SwiftUI
 import Combine
@@ -74,7 +71,7 @@ private enum PasswordCheck {
     case notLongEnough
 }
 
-private class SignupViewModel: ObservableObject {
+private class LoginViewModel: ObservableObject {
     // MARK: - Input
     @Published var username = ""
     @Published var password = ""
@@ -268,7 +265,7 @@ private enum FocusableField: Hashable {
 }
 
 struct Lesson_5_2_HandleErrors_View: View {
-    @StateObject fileprivate var viewModel = SignupViewModel()
+    @StateObject fileprivate var viewModel = LoginViewModel()
     
     @FocusState private var focus: FocusableField?
     

@@ -61,6 +61,7 @@ private class SignupViewModel: ObservableObject {
     @Published var isPasswordEmpty = true
     @Published var isPasswordMatched = false
     @Published var isPasswordLengthSufficient = false
+    @Published var isPasswordPwned = false
     @Published var isValid  = false
     @Published var errorMessage  = ""
     @Published var authenticationState = AuthenticationState.unauthenticated
@@ -83,7 +84,7 @@ private class SignupViewModel: ObservableObject {
             }
             .eraseToAnyPublisher()
     }()
-
+    
     init() {
         $username
             .map { value in
@@ -97,6 +98,15 @@ private class SignupViewModel: ObservableObject {
             }
             .receive(on: DispatchQueue.main)
             .assign(to: &$isUsernameAvailable)
+        
+        $password
+            .dropFirst()
+            .removeDuplicates()
+            .flatMap { value in
+                self.checkHaveIBeenPwned(password: value)
+            }
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$isPasswordPwned)
         
         $password
             .map { $0.isEmpty }
@@ -113,19 +123,22 @@ private class SignupViewModel: ObservableObject {
             .map { $0.count >= 6 }
             .assign(to: &$isPasswordLengthSufficient)
         
-        Publishers.CombineLatest3($isUsernameValid, $isUsernameAvailable, isPasswordValidPublisher)
-            .map { (isUsernameValid, isUsernameAvailable, isPasswordValid) in
-                isUsernameValid && isUsernameAvailable && (isPasswordValid == .valid)
+        Publishers.CombineLatest4($isUsernameValid, $isUsernameAvailable, isPasswordValidPublisher, $isPasswordPwned)
+            .map { (isUsernameValid, isUsernameAvailable, isPasswordValid, isPasswordPwned) in
+                isUsernameValid && isUsernameAvailable && (isPasswordValid == .valid) && !isPasswordPwned
             }
             .assign(to: &$isValid)
         
-        Publishers.CombineLatest3($isUsernameValid, $isUsernameAvailable, isPasswordValidPublisher)
-            .map { isUsernameValid, isUsernameAvailable, isPasswordValid in
+        Publishers.CombineLatest4($isUsernameValid, $isUsernameAvailable, isPasswordValidPublisher, $isPasswordPwned)
+            .map { isUsernameValid, isUsernameAvailable, isPasswordValid, isPasswordPwned in
                 if !isUsernameValid {
                     return "Username is invalid. Must be more than 2 characters"
                 }
                 else if !isUsernameAvailable {
                     return "This username is not available!"
+                }
+                else if isPasswordPwned {
+                    return "This password has been compromised before. Choose another one!"
                 }
                 else if isPasswordValid != .valid {
                     switch isPasswordValid {
@@ -159,6 +172,28 @@ private class SignupViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
+    func checkHaveIBeenPwned(password: String) -> AnyPublisher<Bool, Never> {
+        let hash = password.sha1().uppercased()
+        let prefix = hash.prefix(5)
+        let index = hash.index(hash.startIndex, offsetBy: 5)
+        let suffix = hash.suffix(from: index)
+        print("password: \(password) | hash: \(hash) | prefix: \(prefix) | suffix: \(suffix)")
+        
+        guard let url = URL(string: "https://api.pwnedpasswords.com/range/\(prefix)") else {
+            return Just(false).eraseToAnyPublisher()
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map(\.data)
+            .tryMap { data in
+                String(decoding: data, as: UTF8.self)
+            }
+            .map { pwnedPasswords in
+                pwnedPasswords.contains(suffix)
+            }
+            .replaceError(with: false)
+            .eraseToAnyPublisher()
+    }
 }
 
 private enum FocusableField: Hashable {

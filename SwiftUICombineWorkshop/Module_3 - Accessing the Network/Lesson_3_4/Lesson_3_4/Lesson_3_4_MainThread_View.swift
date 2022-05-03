@@ -79,6 +79,7 @@ private class SignupViewModel: ObservableObject {
             .flatMap { value in
                 self.checkUserNameAvailable(userName: value)
             }
+            .receive(on: DispatchQueue.main)
             .assign(to: &$isUsernameAvailable)
         
         $password

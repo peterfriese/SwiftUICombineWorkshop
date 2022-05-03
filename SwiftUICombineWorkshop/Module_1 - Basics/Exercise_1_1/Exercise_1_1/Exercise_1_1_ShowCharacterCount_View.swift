@@ -11,6 +11,7 @@ import SwiftUI
 private class ViewModel: ObservableObject {
     @Published var username: String = ""
     @Published var isUsernameValid: Bool
+    @Published var numberOfCharacters = 0
     
     init() {
         isUsernameValid = false
@@ -19,6 +20,12 @@ private class ViewModel: ObservableObject {
                 value.count >= 3
             }
             .assign(to: &$isUsernameValid)
+        
+        $username
+            .map { value in
+                value.count
+            }
+            .assign(to: &$numberOfCharacters)
     }
 }
 
@@ -31,7 +38,7 @@ struct Exercise_1_1_ShowCharacterCount_View: View {
                 .textFieldStyle(.roundedBorder)
                 .autocapitalization(.none)
             Text("You entered [\(viewModel.username)]")
-            Text("This username is **\(viewModel.isUsernameValid ? "valid" : "not valid")**")
+            Text("This username has **\(viewModel.numberOfCharacters) characters** and is **\(viewModel.isUsernameValid ? "valid" : "not valid")**")
         }
         .padding()
     }

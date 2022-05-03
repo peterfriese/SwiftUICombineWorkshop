@@ -24,6 +24,7 @@ private class SignupViewModel: ObservableObject {
     @Published var isUsernameValid = false
     @Published var isPasswordEmpty = true
     @Published var isPasswordMatched = false
+    @Published var isPasswordLengthSufficient = false
     @Published var isValid  = false
     @Published var errorMessage  = ""
     @Published var authenticationState = AuthenticationState.unauthenticated
@@ -46,33 +47,26 @@ private class SignupViewModel: ObservableObject {
             }
             .assign(to: &$isPasswordMatched)
         
-        Publishers.CombineLatest3($isUsernameValid, $isPasswordEmpty, $isPasswordMatched)
-            .map { (isUsernameValid, isPasswordEmpty, isPasswordMatched) in
-                isUsernameValid && !isPasswordEmpty && isPasswordMatched
+        $password
+            .map { $0.count >= 6 }
+            .assign(to: &$isPasswordLengthSufficient)
+        
+        Publishers.CombineLatest4($isUsernameValid, $isPasswordEmpty, $isPasswordMatched, $isPasswordLengthSufficient)
+            .map { (isUsernameValid, isPasswordEmpty, isPasswordMatched, isPasswordLengthSufficient) in
+                isUsernameValid && !isPasswordEmpty && isPasswordMatched && isPasswordLengthSufficient
             }
             .assign(to: &$isValid)
         
-        // running pipelines on each individual publisher doesn't result in the desired outcome...
-        
-//        $isPasswordMatched
-//            .map { !$0 ? "Passwords don't match" : ""  }
-//            .assign(to: &$errorMessage)
-//
-//        $isPasswordEmpty
-//            .map { $0 ? "Password must not be empty" : "" }
-//            .assign(to: &$errorMessage)
-//
-//        $isUsernameValid
-//            .map { !$0 ? "Username is invalid. Must be more than 2 characters" : "" }
-//            .assign(to: &$errorMessage)
-        
-        Publishers.CombineLatest3($isUsernameValid, $isPasswordEmpty, $isPasswordMatched)
-            .map { isUsernameValid, isPasswordEmpty, isPasswordMatched in
+        Publishers.CombineLatest4($isUsernameValid, $isPasswordEmpty, $isPasswordMatched, $isPasswordLengthSufficient)
+            .map { isUsernameValid, isPasswordEmpty, isPasswordMatched, isPasswordLengthSufficient in
                 if !isUsernameValid {
                     return "Username is invalid. Must be more than 2 characters"
                 }
                 else if isPasswordEmpty {
                     return "Password must not be empty"
+                }
+                else if !isPasswordLengthSufficient {
+                    return "Password must have at least 6 characters!"
                 }
                 else if !isPasswordMatched {
                     return "Passwords don't match"

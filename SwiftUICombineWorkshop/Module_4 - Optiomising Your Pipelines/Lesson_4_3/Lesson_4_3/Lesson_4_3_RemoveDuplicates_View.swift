@@ -33,7 +33,7 @@ private enum PasswordCheck {
 }
 
 
-private class SignupViewModel: ObservableObject {
+private class LoginViewModel: ObservableObject {
     // MARK: - Input
     @Published var username = ""
     @Published var password = ""
@@ -79,6 +79,7 @@ private class SignupViewModel: ObservableObject {
             .print("1: ")
             .dropFirst()
             .debounce(for: 0.8, scheduler: DispatchQueue.main)
+            .removeDuplicates()
             .print("2: ")
             .flatMap { value in
                 self.checkUserNameAvailable(userName: value)
@@ -156,7 +157,7 @@ private enum FocusableField: Hashable {
 }
 
 struct Lesson_4_3_RemoveDuplicates_View: View {
-    @StateObject fileprivate var viewModel = SignupViewModel()
+    @StateObject fileprivate var viewModel = LoginViewModel()
     
     @FocusState private var focus: FocusableField?
     

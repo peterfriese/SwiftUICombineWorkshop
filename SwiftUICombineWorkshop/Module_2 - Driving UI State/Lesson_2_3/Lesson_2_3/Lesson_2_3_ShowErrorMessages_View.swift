@@ -52,6 +52,37 @@ private class SignupViewModel: ObservableObject {
                 isUsernameValid && !isPasswordEmpty && isPasswordMatched
             }
             .assign(to: &$isValid)
+        
+        // running pipelines on each individual publisher doesn't result in the desired outcome...
+        
+//        $isPasswordMatched
+//            .map { !$0 ? "Passwords don't match" : ""  }
+//            .assign(to: &$errorMessage)
+//
+//        $isPasswordEmpty
+//            .map { $0 ? "Password must not be empty" : "" }
+//            .assign(to: &$errorMessage)
+//
+//        $isUsernameValid
+//            .map { !$0 ? "Username is invalid. Must be more than 2 characters" : "" }
+//            .assign(to: &$errorMessage)
+        
+        Publishers.CombineLatest3($isUsernameValid, $isPasswordEmpty, $isPasswordMatched)
+            .map { isUsernameValid, isPasswordEmpty, isPasswordMatched in
+                if !isUsernameValid {
+                    return "Username is invalid. Must be more than 2 characters"
+                }
+                else if isPasswordEmpty {
+                    return "Password must not be empty"
+                }
+                else if !isPasswordMatched {
+                    return "Passwords don't match"
+                }
+                else {
+                    return ""
+                }
+            }
+            .assign(to: &$errorMessage)
     }
 }
 

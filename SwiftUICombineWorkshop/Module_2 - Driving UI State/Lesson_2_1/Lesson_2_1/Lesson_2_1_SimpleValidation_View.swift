@@ -21,10 +21,16 @@ private class SignupViewModel: ObservableObject {
     @Published var confirmPassword  = ""
     
     // MARK: - Output
+    @Published var isValid  = false
     @Published var errorMessage  = ""
     @Published var authenticationState = AuthenticationState.unauthenticated
     
     init() {
+        $username
+            .map { value in
+                value.count >= 3
+            }
+            .assign(to: &$isValid)
     }
 }
 
@@ -80,6 +86,7 @@ struct Lesson_2_1_SimpleValidation_View: View {
                     .frame(maxWidth: .infinity)
             }
         }
+        .disabled(!viewModel.isValid)
         .frame(maxWidth: .infinity)
         .buttonStyle(.borderedProminent)
         .controlSize(.large)

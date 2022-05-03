@@ -36,7 +36,7 @@ private enum PasswordCheck {
     case notLongEnough
 }
 
-private class SignupViewModel: ObservableObject {
+private class LoginViewModel: ObservableObject {
     // MARK: - Input
     @Published var username = ""
     @Published var password = ""
@@ -60,6 +60,9 @@ private class SignupViewModel: ObservableObject {
             .print("2: ")
             .flatMap { value in
                 self.checkUserNameAvailable(userName: value)
+                    .catch { error in
+                        return Just(false)
+                    }
             }
             .receive(on: DispatchQueue.main)
             .share()
@@ -140,16 +143,16 @@ private class SignupViewModel: ObservableObject {
             .assign(to: &$errorMessage)
     }
     
-    func checkUserNameAvailable(userName: String) -> AnyPublisher<Bool, Never> {
+    func checkUserNameAvailable(userName: String) -> AnyPublisher<Bool, Error> {
         guard let url = URL(string: "http://127.0.0.1:8080/isUserNameAvailable?userName=\(userName)") else {
-            return Just(false).eraseToAnyPublisher()
+            return Fail(error: NetworkError.invalidRequestError("URL invalid"))
+                    .eraseToAnyPublisher()
         }
         
         return URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: UserNameAvailableMessage.self, decoder: JSONDecoder())
             .map(\.isAvailable)
-            .replaceError(with: false)
             .eraseToAnyPublisher()
     }
     
@@ -162,7 +165,7 @@ private enum FocusableField: Hashable {
 }
 
 struct Lesson_5_1_ThrowErrors_View: View {
-    @StateObject fileprivate var viewModel = SignupViewModel()
+    @StateObject fileprivate var viewModel = LoginViewModel()
     
     @FocusState private var focus: FocusableField?
     

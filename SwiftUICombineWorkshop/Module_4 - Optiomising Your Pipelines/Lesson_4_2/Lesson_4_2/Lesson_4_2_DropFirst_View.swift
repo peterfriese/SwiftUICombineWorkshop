@@ -76,6 +76,7 @@ private class SignupViewModel: ObservableObject {
         
         $username
             .print("1: ")
+            .dropFirst()
             .debounce(for: 0.8, scheduler: DispatchQueue.main)
             .print("2: ")
             .flatMap { value in

@@ -84,12 +84,7 @@ private class SignupViewModel: ObservableObject {
         
         $username
             .flatMap { value in
-                Future { promise in
-                    self.checkUserNameAvailable(userName: value) { result in
-                        promise(result)
-                    }
-                }
-                .replaceError(with: false)
+                self.checkUserNameAvailable(userName: value)
             }
             .assign(to: &$isUsernameAvailable)
         
@@ -141,7 +136,7 @@ private class SignupViewModel: ObservableObject {
             .assign(to: &$errorMessage)
     }
     
-    func checkUserNameAvailable(userName: String, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+    func checkUserNameAvailableOld(userName: String, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         let url = URL(string: "http://127.0.0.1:8080/isUserNameAvailable?userName=\(userName)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -172,6 +167,27 @@ private class SignupViewModel: ObservableObject {
         
         task.resume()
     }
+    
+    func checkUserNameAvailable(userName: String) -> AnyPublisher<Bool, Never> {
+        guard let url = URL(string: "http://127.0.0.1:8080/isUserNameAvailable?userName=\(userName)") else {
+            return Just(false).eraseToAnyPublisher()
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map { data, response in
+                do {
+                    let decoder = JSONDecoder()
+                    let userAvailableMessage = try decoder.decode(UserNameAvailableMessage.self, from: data)
+                    return userAvailableMessage.isAvailable
+                }
+                catch {
+                    return false
+                }
+            }
+            .replaceError(with: false)
+            .eraseToAnyPublisher()
+    }
+    
 }
 
 private enum FocusableField: Hashable {

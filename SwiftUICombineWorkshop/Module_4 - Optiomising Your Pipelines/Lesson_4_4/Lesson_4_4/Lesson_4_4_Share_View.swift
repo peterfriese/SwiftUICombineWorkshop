@@ -60,13 +60,16 @@ private class SignupViewModel: ObservableObject {
     
     lazy var isUsernameAvailablePublisher: AnyPublisher<Bool, Never> = {
         $username
+            .print("1: ")
             .dropFirst()
             .debounce(for: 0.8, scheduler: DispatchQueue.main)
             .removeDuplicates()
+            .print("2: ")
             .flatMap { value in
                 self.checkUserNameAvailable(userName: value)
             }
             .receive(on: DispatchQueue.main)
+            .share()
             .eraseToAnyPublisher()
     }()
     

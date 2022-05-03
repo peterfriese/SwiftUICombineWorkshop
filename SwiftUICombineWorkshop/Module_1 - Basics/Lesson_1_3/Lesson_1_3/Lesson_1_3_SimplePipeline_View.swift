@@ -11,6 +11,14 @@ import SwiftUI
 private class ViewModel: ObservableObject {
     @Published var username: String = ""
     @Published var isUsernameValid = false
+    
+    init() {
+        $username
+            .map { value in
+                value.count >= 3
+            }
+            .assign(to: &$isUsernameValid)
+    }
 }
 
 struct Lesson_1_3_SimplePipeline_View: View {
@@ -25,9 +33,6 @@ struct Lesson_1_3_SimplePipeline_View: View {
             Text("This username is **\(viewModel.isUsernameValid ? "valid" : "not valid")**")
         }
         .padding()
-        .onChange(of: viewModel.username) { newValue in
-            viewModel.isUsernameValid = newValue.count >= 3
-        }
     }
 }
 

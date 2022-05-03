@@ -76,6 +76,7 @@ private class SignupViewModel: ObservableObject {
             .assign(to: &$isUsernameValid)
         
         $username
+            .debounce(for: 0.8, scheduler: DispatchQueue.main)
             .flatMap { value in
                 self.checkUserNameAvailable(userName: value)
             }

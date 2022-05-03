@@ -11,6 +11,7 @@ import SwiftUI
 
 struct Lesson_1_1_OnChangeOf_View: View {
     @State var username: String = ""
+    @State var isUsernameValid = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -18,8 +19,12 @@ struct Lesson_1_1_OnChangeOf_View: View {
                 .textFieldStyle(.roundedBorder)
                 .autocapitalization(.none)
             Text("You entered [\(username)]")
+            Text("This username is **\(isUsernameValid ? "valid" : "not valid")**")
         }
         .padding()
+        .onChange(of: username) { newValue in
+            isUsernameValid = newValue.count >= 3
+        }
     }
 }
 

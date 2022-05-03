@@ -8,21 +8,25 @@
 
 import SwiftUI
 
+private class ViewModel: ObservableObject {
+    @Published var username: String = ""
+    @Published var isUsernameValid = false
+}
+
 struct Lesson_1_2_ViewModel_View: View {
-    @State var username: String = ""
-    @State var isUsernameValid = false
+    @StateObject fileprivate var viewModel = ViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
-            TextField("Username", text: $username)
+            TextField("Username", text: $viewModel.username)
                 .textFieldStyle(.roundedBorder)
                 .autocapitalization(.none)
-            Text("You entered [\(username)]")
-            Text("This username is **\(isUsernameValid ? "valid" : "not valid")**")
+            Text("You entered [\(viewModel.username)]")
+            Text("This username is **\(viewModel.isUsernameValid ? "valid" : "not valid")**")
         }
         .padding()
-        .onChange(of: username) { newValue in
-            isUsernameValid = newValue.count >= 3
+        .onChange(of: viewModel.username) { newValue in
+            viewModel.isUsernameValid = newValue.count >= 3
         }
     }
 }
