@@ -1,0 +1,800 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		880FA1E528212F2300513FCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880FA1D028212F2200513FCB /* Lesson_5_1.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 880FA1BF28212F2000513FCB;
+			remoteInfo = Lesson_5_1;
+		};
+		880FA20A282131BD00513FCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880FA206282131BC00513FCB /* SwiftUICombineWorkshop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 880FA1F5282131BA00513FCB;
+			remoteInfo = SwiftUICombineWorkshop;
+		};
+		882873522821669E00F87073 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8828733C2821669D00F87073 /* Lesson_5_2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8828732B2821669B00F87073;
+			remoteInfo = Lesson_5_2;
+		};
+		88ADDADC282033F500233A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88ADDAD8282033F400233A6B /* Lesson_3_1.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88ADDAC7282033F300233A6B;
+			remoteInfo = Lesson_3_1;
+		};
+		88ADDAFC2820341200233A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88ADDAF82820341200233A6B /* Lesson_3_2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88ADDAE72820341000233A6B;
+			remoteInfo = Lesson_3_2;
+		};
+		88ADDB1C2820342D00233A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88ADDB182820342D00233A6B /* Lesson_3_3.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88ADDB072820342B00233A6B;
+			remoteInfo = Lesson_3_3;
+		};
+		88ADDB3C2820344A00233A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88ADDB382820344900233A6B /* Lesson_3_4.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88ADDB272820344700233A6B;
+			remoteInfo = Lesson_3_4;
+		};
+		88ADDB7C282034AB00233A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88ADDB78282034AA00233A6B /* Lesson_4_4.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88ADDB67282034A900233A6B;
+			remoteInfo = Lesson_4_4;
+		};
+		88ADDB9C282034C100233A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88ADDB98282034C100233A6B /* Lesson_4_3.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88ADDB87282034BF00233A6B;
+			remoteInfo = Lesson_4_3;
+		};
+		88ADDBBC2820350100233A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88ADDBB82820350000233A6B /* Lesson_4_2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88ADDBA7282034FF00233A6B;
+			remoteInfo = Lesson_4_2;
+		};
+		88ADDBDC2820351600233A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88ADDBD82820351600233A6B /* Lesson_4_1.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88ADDBC72820351500233A6B;
+			remoteInfo = Lesson_4_1;
+		};
+		88ADDBFC2820359F00233A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88ADDBF82820359E00233A6B /* Challenge_3_1.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88ADDBE72820359D00233A6B;
+			remoteInfo = Challenge_3_1;
+		};
+		88D79AB7282032B000BC92B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88D79AB3282032AF00BC92B3 /* Lesson_2_1.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88D79AA2282032AE00BC92B3;
+			remoteInfo = Lesson_2_1;
+		};
+		88D79AD7282032C600BC92B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88D79AD3282032C600BC92B3 /* Lesson_2_2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88D79AC2282032C400BC92B3;
+			remoteInfo = Lesson_2_2;
+		};
+		88D79AF7282032DC00BC92B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88D79AF3282032DB00BC92B3 /* Lesson_2_3.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88D79AE2282032DA00BC92B3;
+			remoteInfo = Lesson_2_3;
+		};
+		88D79B312820331700BC92B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88D79B2D2820331600BC92B3 /* Exercise_2_1.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88D79B1C2820331500BC92B3;
+			remoteInfo = Exercise_2_1;
+		};
+		88F4D3C22820311200B600CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F4D3BE2820311100B600CC /* Lesson_1_1.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F4D3AD2820311000B600CC;
+			remoteInfo = Lesson_1_1;
+		};
+		88F4D3E22820314800B600CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F4D3DE2820314800B600CC /* Lesson_1_2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F4D3CD2820314600B600CC;
+			remoteInfo = Lesson_1_2;
+		};
+		88F4D4022820316500B600CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F4D3FE2820316400B600CC /* Lesson_1_3.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F4D3ED2820316300B600CC;
+			remoteInfo = Lesson_1_3;
+		};
+		88F4D4222820318500B600CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F4D41E2820318500B600CC /* Exercise_1_1.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F4D40D2820318300B600CC;
+			remoteInfo = Exercise_1_1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		880FA1D028212F2200513FCB /* Lesson_5_1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_5_1.xcodeproj; path = Lesson_5_1/Lesson_5_1.xcodeproj; sourceTree = "<group>"; };
+		880FA206282131BC00513FCB /* SwiftUICombineWorkshop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUICombineWorkshop.xcodeproj; path = SwiftUICombineWorkshop/SwiftUICombineWorkshop.xcodeproj; sourceTree = "<group>"; };
+		8828733C2821669D00F87073 /* Lesson_5_2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_5_2.xcodeproj; path = Lesson_5_2/Lesson_5_2.xcodeproj; sourceTree = "<group>"; };
+		88ADDAD8282033F400233A6B /* Lesson_3_1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_3_1.xcodeproj; path = Lesson_3_1/Lesson_3_1.xcodeproj; sourceTree = "<group>"; };
+		88ADDAF82820341200233A6B /* Lesson_3_2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_3_2.xcodeproj; path = Lesson_3_2/Lesson_3_2.xcodeproj; sourceTree = "<group>"; };
+		88ADDB182820342D00233A6B /* Lesson_3_3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_3_3.xcodeproj; path = Lesson_3_3/Lesson_3_3.xcodeproj; sourceTree = "<group>"; };
+		88ADDB382820344900233A6B /* Lesson_3_4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_3_4.xcodeproj; path = Lesson_3_4/Lesson_3_4.xcodeproj; sourceTree = "<group>"; };
+		88ADDB78282034AA00233A6B /* Lesson_4_4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_4_4.xcodeproj; path = Lesson_4_4/Lesson_4_4.xcodeproj; sourceTree = "<group>"; };
+		88ADDB98282034C100233A6B /* Lesson_4_3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_4_3.xcodeproj; path = Lesson_4_3/Lesson_4_3.xcodeproj; sourceTree = "<group>"; };
+		88ADDBB82820350000233A6B /* Lesson_4_2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_4_2.xcodeproj; path = Lesson_4_2/Lesson_4_2.xcodeproj; sourceTree = "<group>"; };
+		88ADDBD82820351600233A6B /* Lesson_4_1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_4_1.xcodeproj; path = Lesson_4_1/Lesson_4_1.xcodeproj; sourceTree = "<group>"; };
+		88ADDBF82820359E00233A6B /* Challenge_3_1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Challenge_3_1.xcodeproj; path = Challenge_3_1/Challenge_3_1.xcodeproj; sourceTree = "<group>"; };
+		88D79AB3282032AF00BC92B3 /* Lesson_2_1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_2_1.xcodeproj; path = Lesson_2_1/Lesson_2_1.xcodeproj; sourceTree = "<group>"; };
+		88D79AD3282032C600BC92B3 /* Lesson_2_2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_2_2.xcodeproj; path = Lesson_2_2/Lesson_2_2.xcodeproj; sourceTree = "<group>"; };
+		88D79AF3282032DB00BC92B3 /* Lesson_2_3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_2_3.xcodeproj; path = Lesson_2_3/Lesson_2_3.xcodeproj; sourceTree = "<group>"; };
+		88D79B2D2820331600BC92B3 /* Exercise_2_1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Exercise_2_1.xcodeproj; path = Exercise_2_1/Exercise_2_1.xcodeproj; sourceTree = "<group>"; };
+		88F4D3BE2820311100B600CC /* Lesson_1_1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_1_1.xcodeproj; path = Lesson_1_1/Lesson_1_1.xcodeproj; sourceTree = "<group>"; };
+		88F4D3DE2820314800B600CC /* Lesson_1_2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_1_2.xcodeproj; path = Lesson_1_2/Lesson_1_2.xcodeproj; sourceTree = "<group>"; };
+		88F4D3FE2820316400B600CC /* Lesson_1_3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lesson_1_3.xcodeproj; path = Lesson_1_3/Lesson_1_3.xcodeproj; sourceTree = "<group>"; };
+		88F4D41E2820318500B600CC /* Exercise_1_1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Exercise_1_1.xcodeproj; path = Exercise_1_1/Exercise_1_1.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		880FA1D128212F2200513FCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880FA1E628212F2300513FCB /* Lesson_5_1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		880FA1EB2821319A00513FCB /* Final */ = {
+			isa = PBXGroup;
+			children = (
+				880FA206282131BC00513FCB /* SwiftUICombineWorkshop.xcodeproj */,
+			);
+			path = Final;
+			sourceTree = "<group>";
+		};
+		880FA207282131BC00513FCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880FA20B282131BD00513FCB /* SwiftUICombineWorkshop.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88135ADE2820306000EAD0EF = {
+			isa = PBXGroup;
+			children = (
+				88F4D3A3282030C400B600CC /* Module_1 - Basics */,
+				88F4D424282031A200B600CC /* Module_2 - Driving UI State */,
+				88F4D425282031AA00B600CC /* Module_3 - Accessing the Network */,
+				88F4D426282031B300B600CC /* Module_4 - Optiomising Your Pipelines */,
+				88F4D427282031BE00B600CC /* Module_5 - Handling Errors */,
+				880FA1EB2821319A00513FCB /* Final */,
+				88135AE82820306000EAD0EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88135AE82820306000EAD0EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8828733D2821669D00F87073 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				882873532821669E00F87073 /* Lesson_5_2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88ADDAD9282033F400233A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDADD282033F500233A6B /* Lesson_3_1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88ADDAF92820341200233A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDAFD2820341200233A6B /* Lesson_3_2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88ADDB192820342D00233A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDB1D2820342D00233A6B /* Lesson_3_3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88ADDB392820344900233A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDB3D2820344A00233A6B /* Lesson_3_4.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88ADDB79282034AA00233A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDB7D282034AB00233A6B /* Lesson_4_4.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88ADDB99282034C100233A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDB9D282034C100233A6B /* Lesson_4_3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88ADDBB92820350000233A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDBBD2820350100233A6B /* Lesson_4_2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88ADDBD92820351600233A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDBDD2820351600233A6B /* Lesson_4_1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88ADDBF92820359E00233A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDBFD2820359F00233A6B /* Challenge_3_1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88D79AB4282032AF00BC92B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88D79AB8282032B000BC92B3 /* Lesson_2_1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88D79AD4282032C600BC92B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88D79AD8282032C600BC92B3 /* Lesson_2_2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88D79AF4282032DB00BC92B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88D79AF8282032DC00BC92B3 /* Lesson_2_3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88D79B2E2820331600BC92B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88D79B322820331700BC92B3 /* Exercise_2_1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88F4D3A3282030C400B600CC /* Module_1 - Basics */ = {
+			isa = PBXGroup;
+			children = (
+				88F4D3BE2820311100B600CC /* Lesson_1_1.xcodeproj */,
+				88F4D3DE2820314800B600CC /* Lesson_1_2.xcodeproj */,
+				88F4D3FE2820316400B600CC /* Lesson_1_3.xcodeproj */,
+				88F4D41E2820318500B600CC /* Exercise_1_1.xcodeproj */,
+			);
+			path = "Module_1 - Basics";
+			sourceTree = "<group>";
+		};
+		88F4D3BF2820311100B600CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88F4D3C32820311200B600CC /* Lesson_1_1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88F4D3DF2820314800B600CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88F4D3E32820314800B600CC /* Lesson_1_2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88F4D3FF2820316400B600CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88F4D4032820316500B600CC /* Lesson_1_3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88F4D41F2820318500B600CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88F4D4232820318500B600CC /* Exercise_1_1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88F4D424282031A200B600CC /* Module_2 - Driving UI State */ = {
+			isa = PBXGroup;
+			children = (
+				88D79AB3282032AF00BC92B3 /* Lesson_2_1.xcodeproj */,
+				88D79AD3282032C600BC92B3 /* Lesson_2_2.xcodeproj */,
+				88D79AF3282032DB00BC92B3 /* Lesson_2_3.xcodeproj */,
+				88D79B2D2820331600BC92B3 /* Exercise_2_1.xcodeproj */,
+			);
+			path = "Module_2 - Driving UI State";
+			sourceTree = "<group>";
+		};
+		88F4D425282031AA00B600CC /* Module_3 - Accessing the Network */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDAD8282033F400233A6B /* Lesson_3_1.xcodeproj */,
+				88ADDAF82820341200233A6B /* Lesson_3_2.xcodeproj */,
+				88ADDB182820342D00233A6B /* Lesson_3_3.xcodeproj */,
+				88ADDB382820344900233A6B /* Lesson_3_4.xcodeproj */,
+				88ADDBF82820359E00233A6B /* Challenge_3_1.xcodeproj */,
+			);
+			path = "Module_3 - Accessing the Network";
+			sourceTree = "<group>";
+		};
+		88F4D426282031B300B600CC /* Module_4 - Optiomising Your Pipelines */ = {
+			isa = PBXGroup;
+			children = (
+				88ADDBD82820351600233A6B /* Lesson_4_1.xcodeproj */,
+				88ADDBB82820350000233A6B /* Lesson_4_2.xcodeproj */,
+				88ADDB98282034C100233A6B /* Lesson_4_3.xcodeproj */,
+				88ADDB78282034AA00233A6B /* Lesson_4_4.xcodeproj */,
+			);
+			path = "Module_4 - Optiomising Your Pipelines";
+			sourceTree = "<group>";
+		};
+		88F4D427282031BE00B600CC /* Module_5 - Handling Errors */ = {
+			isa = PBXGroup;
+			children = (
+				880FA1D028212F2200513FCB /* Lesson_5_1.xcodeproj */,
+				8828733C2821669D00F87073 /* Lesson_5_2.xcodeproj */,
+			);
+			path = "Module_5 - Handling Errors";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		88135ADF2820306000EAD0EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+			};
+			buildConfigurationList = 88135AE22820306000EAD0EF /* Build configuration list for PBXProject "SwiftUICombineWorkshop" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88135ADE2820306000EAD0EF;
+			productRefGroup = 88135AE82820306000EAD0EF /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 88ADDBF92820359E00233A6B /* Products */;
+					ProjectRef = 88ADDBF82820359E00233A6B /* Challenge_3_1.xcodeproj */;
+				},
+				{
+					ProductGroup = 88F4D41F2820318500B600CC /* Products */;
+					ProjectRef = 88F4D41E2820318500B600CC /* Exercise_1_1.xcodeproj */;
+				},
+				{
+					ProductGroup = 88D79B2E2820331600BC92B3 /* Products */;
+					ProjectRef = 88D79B2D2820331600BC92B3 /* Exercise_2_1.xcodeproj */;
+				},
+				{
+					ProductGroup = 88F4D3BF2820311100B600CC /* Products */;
+					ProjectRef = 88F4D3BE2820311100B600CC /* Lesson_1_1.xcodeproj */;
+				},
+				{
+					ProductGroup = 88F4D3DF2820314800B600CC /* Products */;
+					ProjectRef = 88F4D3DE2820314800B600CC /* Lesson_1_2.xcodeproj */;
+				},
+				{
+					ProductGroup = 88F4D3FF2820316400B600CC /* Products */;
+					ProjectRef = 88F4D3FE2820316400B600CC /* Lesson_1_3.xcodeproj */;
+				},
+				{
+					ProductGroup = 88D79AB4282032AF00BC92B3 /* Products */;
+					ProjectRef = 88D79AB3282032AF00BC92B3 /* Lesson_2_1.xcodeproj */;
+				},
+				{
+					ProductGroup = 88D79AD4282032C600BC92B3 /* Products */;
+					ProjectRef = 88D79AD3282032C600BC92B3 /* Lesson_2_2.xcodeproj */;
+				},
+				{
+					ProductGroup = 88D79AF4282032DB00BC92B3 /* Products */;
+					ProjectRef = 88D79AF3282032DB00BC92B3 /* Lesson_2_3.xcodeproj */;
+				},
+				{
+					ProductGroup = 88ADDAD9282033F400233A6B /* Products */;
+					ProjectRef = 88ADDAD8282033F400233A6B /* Lesson_3_1.xcodeproj */;
+				},
+				{
+					ProductGroup = 88ADDAF92820341200233A6B /* Products */;
+					ProjectRef = 88ADDAF82820341200233A6B /* Lesson_3_2.xcodeproj */;
+				},
+				{
+					ProductGroup = 88ADDB192820342D00233A6B /* Products */;
+					ProjectRef = 88ADDB182820342D00233A6B /* Lesson_3_3.xcodeproj */;
+				},
+				{
+					ProductGroup = 88ADDB392820344900233A6B /* Products */;
+					ProjectRef = 88ADDB382820344900233A6B /* Lesson_3_4.xcodeproj */;
+				},
+				{
+					ProductGroup = 88ADDBD92820351600233A6B /* Products */;
+					ProjectRef = 88ADDBD82820351600233A6B /* Lesson_4_1.xcodeproj */;
+				},
+				{
+					ProductGroup = 88ADDBB92820350000233A6B /* Products */;
+					ProjectRef = 88ADDBB82820350000233A6B /* Lesson_4_2.xcodeproj */;
+				},
+				{
+					ProductGroup = 88ADDB99282034C100233A6B /* Products */;
+					ProjectRef = 88ADDB98282034C100233A6B /* Lesson_4_3.xcodeproj */;
+				},
+				{
+					ProductGroup = 88ADDB79282034AA00233A6B /* Products */;
+					ProjectRef = 88ADDB78282034AA00233A6B /* Lesson_4_4.xcodeproj */;
+				},
+				{
+					ProductGroup = 880FA1D128212F2200513FCB /* Products */;
+					ProjectRef = 880FA1D028212F2200513FCB /* Lesson_5_1.xcodeproj */;
+				},
+				{
+					ProductGroup = 8828733D2821669D00F87073 /* Products */;
+					ProjectRef = 8828733C2821669D00F87073 /* Lesson_5_2.xcodeproj */;
+				},
+				{
+					ProductGroup = 880FA207282131BC00513FCB /* Products */;
+					ProjectRef = 880FA206282131BC00513FCB /* SwiftUICombineWorkshop.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		880FA1E628212F2300513FCB /* Lesson_5_1.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_5_1.app;
+			remoteRef = 880FA1E528212F2300513FCB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880FA20B282131BD00513FCB /* SwiftUICombineWorkshop.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SwiftUICombineWorkshop.app;
+			remoteRef = 880FA20A282131BD00513FCB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		882873532821669E00F87073 /* Lesson_5_2.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_5_2.app;
+			remoteRef = 882873522821669E00F87073 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88ADDADD282033F500233A6B /* Lesson_3_1.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_3_1.app;
+			remoteRef = 88ADDADC282033F500233A6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88ADDAFD2820341200233A6B /* Lesson_3_2.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_3_2.app;
+			remoteRef = 88ADDAFC2820341200233A6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88ADDB1D2820342D00233A6B /* Lesson_3_3.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_3_3.app;
+			remoteRef = 88ADDB1C2820342D00233A6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88ADDB3D2820344A00233A6B /* Lesson_3_4.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_3_4.app;
+			remoteRef = 88ADDB3C2820344A00233A6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88ADDB7D282034AB00233A6B /* Lesson_4_4.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_4_4.app;
+			remoteRef = 88ADDB7C282034AB00233A6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88ADDB9D282034C100233A6B /* Lesson_4_3.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_4_3.app;
+			remoteRef = 88ADDB9C282034C100233A6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88ADDBBD2820350100233A6B /* Lesson_4_2.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_4_2.app;
+			remoteRef = 88ADDBBC2820350100233A6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88ADDBDD2820351600233A6B /* Lesson_4_1.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_4_1.app;
+			remoteRef = 88ADDBDC2820351600233A6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88ADDBFD2820359F00233A6B /* Challenge_3_1.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Challenge_3_1.app;
+			remoteRef = 88ADDBFC2820359F00233A6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88D79AB8282032B000BC92B3 /* Lesson_2_1.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_2_1.app;
+			remoteRef = 88D79AB7282032B000BC92B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88D79AD8282032C600BC92B3 /* Lesson_2_2.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_2_2.app;
+			remoteRef = 88D79AD7282032C600BC92B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88D79AF8282032DC00BC92B3 /* Lesson_2_3.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_2_3.app;
+			remoteRef = 88D79AF7282032DC00BC92B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88D79B322820331700BC92B3 /* Exercise_2_1.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Exercise_2_1.app;
+			remoteRef = 88D79B312820331700BC92B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88F4D3C32820311200B600CC /* Lesson_1_1.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_1_1.app;
+			remoteRef = 88F4D3C22820311200B600CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88F4D3E32820314800B600CC /* Lesson_1_2.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_1_2.app;
+			remoteRef = 88F4D3E22820314800B600CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88F4D4032820316500B600CC /* Lesson_1_3.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Lesson_1_3.app;
+			remoteRef = 88F4D4022820316500B600CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		88F4D4232820318500B600CC /* Exercise_1_1.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Exercise_1_1.app;
+			remoteRef = 88F4D4222820318500B600CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin XCBuildConfiguration section */
+		88135AF32820306100EAD0EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		88135AF42820306100EAD0EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88135AE22820306000EAD0EF /* Build configuration list for PBXProject "SwiftUICombineWorkshop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88135AF32820306100EAD0EF /* Debug */,
+				88135AF42820306100EAD0EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88135ADF2820306000EAD0EF /* Project object */;
+}

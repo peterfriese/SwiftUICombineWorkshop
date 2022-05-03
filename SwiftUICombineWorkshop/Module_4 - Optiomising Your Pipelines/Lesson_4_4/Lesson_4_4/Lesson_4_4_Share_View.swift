@@ -1,0 +1,278 @@
+/// Lesson 4.4: Using the `share` operator to reuse publishers
+///
+/// Steps:
+/// 1. In this example, I've refactored the pipeline for `isUsernameAvailable` into a
+///    standalone publisher (`isUsernameAvailablePublisher`), just like we did for
+///    `isPasswordPublisher`. This is in preparation for the next module in which we will
+///    implement a more detailed error handling.
+/// 2. When running this code, you will notice that the server received two requests for every username event.
+/// 3. Use a sound breakpoint on the server to _hear_ this
+/// 4. Add `print()` operators to see what is going on with out subscriptions
+/// 5. Search for uses of `isUsernameAvailablePublisher`
+/// 6. The publisher is being used in two locations, and it receives two subscriptions, hence all events get
+///    sent twice. If we added another subscriber, all events would get sent thrice!
+/// 7. Use the `share` operator (just before `eraseToAnyPublisher` to reuse the publisher
+/// 8. Run the app again to see (and hear) that it no longer sends all events twice
+
+import SwiftUI
+import Combine
+
+private enum AuthenticationState {
+    case unauthenticated
+    case authenticating
+    case authenticated
+}
+
+private struct UserNameAvailableMessage: Codable {
+    var isAvailable: Bool
+    var userName: String
+}
+
+private enum NetworkError: Error {
+    case transportError(Error)
+    case serverError(statusCode: Int)
+    case noData
+    case decodingError(Error)
+    case encodingError(Error)
+}
+
+private enum PasswordCheck {
+    case valid
+    case empty
+    case noMatch
+    case notLongEnough
+}
+
+private class SignupViewModel: ObservableObject {
+    // MARK: - Input
+    @Published var username = ""
+    @Published var password = ""
+    @Published var confirmPassword  = ""
+    
+    // MARK: - Output
+    @Published var isUsernameValid = false
+    @Published var isPasswordEmpty = true
+    @Published var isPasswordMatched = false
+    @Published var isPasswordLengthSufficient = false
+    @Published var isValid  = false
+    @Published var errorMessage  = ""
+    @Published var authenticationState = AuthenticationState.unauthenticated
+    
+    lazy var isUsernameAvailablePublisher: AnyPublisher<Bool, Never> = {
+        $username
+            .dropFirst()
+            .debounce(for: 0.8, scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .flatMap { value in
+                self.checkUserNameAvailable(userName: value)
+            }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }()
+    
+    lazy var isPasswordValidPublisher: AnyPublisher<PasswordCheck, Never>  = {
+        Publishers.CombineLatest3($isPasswordEmpty, $isPasswordMatched, $isPasswordLengthSufficient)
+            .map { (isPasswordEmpty, isPasswordMatched, isPasswordLengthSufficient) in
+                if isPasswordEmpty {
+                    return .empty
+                }
+                else if !isPasswordMatched {
+                    return .noMatch
+                }
+                else if !isPasswordLengthSufficient {
+                    return .notLongEnough
+                }
+                else {
+                    return .valid
+                }
+            }
+            .eraseToAnyPublisher()
+    }()
+    
+    init() {
+        $username
+            .map { value in
+                value.count >= 3
+            }
+            .assign(to: &$isUsernameValid)
+        
+        $password
+            .map { $0.isEmpty }
+            .assign(to: &$isPasswordEmpty)
+        
+        $password
+            .combineLatest($confirmPassword)
+            .map { (password, confirmPassword) in
+                password == confirmPassword
+            }
+            .assign(to: &$isPasswordMatched)
+        
+        $password
+            .map { $0.count >= 6 }
+            .assign(to: &$isPasswordLengthSufficient)
+        
+        Publishers.CombineLatest3($isUsernameValid, isUsernameAvailablePublisher, isPasswordValidPublisher)
+            .map { (isUsernameValid, isUsernameAvailable, isPasswordValid) in
+                isUsernameValid && isUsernameAvailable && (isPasswordValid == .valid)
+            }
+            .assign(to: &$isValid)
+        
+        Publishers.CombineLatest3($isUsernameValid, isUsernameAvailablePublisher, isPasswordValidPublisher)
+            .map { isUsernameValid, isUsernameAvailable, isPasswordValid in
+                if !isUsernameValid {
+                    return "Username is invalid. Must be more than 2 characters"
+                }
+                else if !isUsernameAvailable {
+                    return "This username is not available!"
+                }
+                else if isPasswordValid != .valid {
+                    switch isPasswordValid {
+                    case .noMatch:
+                        return "Passwords don't match"
+                    case .empty:
+                        return "Password must not be empty"
+                    case .notLongEnough:
+                        return "Password not long enough. Must at least be 6 characters"
+                    default:
+                        return ""
+                    }
+                }
+                else {
+                    return ""
+                }
+            }
+            .assign(to: &$errorMessage)
+    }
+    
+    func checkUserNameAvailable(userName: String) -> AnyPublisher<Bool, Never> {
+        guard let url = URL(string: "http://127.0.0.1:8080/isUserNameAvailable?userName=\(userName)") else {
+            return Just(false).eraseToAnyPublisher()
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map(\.data)
+            .decode(type: UserNameAvailableMessage.self, decoder: JSONDecoder())
+            .map(\.isAvailable)
+            .replaceError(with: false)
+            .eraseToAnyPublisher()
+    }
+    
+}
+
+private enum FocusableField: Hashable {
+    case username
+    case password
+    case confirmPassword
+}
+
+struct Lesson_4_4_Share_View: View {
+    @StateObject fileprivate var viewModel = SignupViewModel()
+    
+    @FocusState private var focus: FocusableField?
+    
+    var heroImage: some View {
+        Image("SignUp")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(minHeight: 100)
+    }
+    
+    var title: some View {
+        Text("Sign up")
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    var errorLabel: some View {
+        Group {
+            if !viewModel.errorMessage.isEmpty {
+                HStack {
+                    Text(viewModel.errorMessage)
+                        .foregroundColor(Color(UIColor.systemRed))
+                    Spacer()
+                }
+            }
+            else {
+                EmptyView()
+            }
+        }
+    }
+    
+    var signupButton: some View {
+        Button(action: {} ) {
+            if viewModel.authenticationState != .authenticating {
+                Text("Continue")
+                    .frame(maxWidth: .infinity)
+            }
+            else {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                    .frame(maxWidth: .infinity)
+            }
+        }
+        .disabled(!viewModel.isValid)
+        .frame(maxWidth: .infinity)
+        .buttonStyle(.borderedProminent)
+        .controlSize(.large)
+    }
+    
+    var loginInstead: some View {
+        HStack {
+            Text("Already have an account?")
+            Button(action: {}) {
+                Text("Login")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.blue)
+            }
+        }
+        .padding([.top, .bottom], 50)
+    }
+    
+    var body: some View {
+        VStack {
+            heroImage
+            title
+            
+            FormRow(systemImage: "person") {
+                TextField("Username", text: $viewModel.username)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                    .focused($focus, equals: .username)
+                    .submitLabel(.next)
+                    .onSubmit {
+                        self.focus = .password
+                    }
+            }
+            
+            FormRow(systemImage: "lock") {
+                SecureField("Password", text: $viewModel.password)
+                    .focused($focus, equals: .password)
+                    .submitLabel(.next)
+                    .onSubmit {
+                        self.focus = .confirmPassword
+                    }
+            }
+            
+            FormRow(systemImage: "lock") {
+                SecureField("Confirm password", text: $viewModel.confirmPassword)
+                    .focused($focus, equals: .confirmPassword)
+                    .submitLabel(.go)
+                    .onSubmit {
+                        // signUpWithEmailPassword()
+                    }
+            }
+            
+            errorLabel
+            signupButton
+            loginInstead
+        }
+        .padding(.horizontal, 32)
+    }
+}
+
+struct Lesson_4_4_Share_Previews: PreviewProvider {
+    static var previews: some View {
+        Lesson_4_4_Share_View()
+    }
+}
